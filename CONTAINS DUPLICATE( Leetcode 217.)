@@ -1,0 +1,27 @@
+//Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+//First approach -- Sorting
+ class Solution {
+public :
+bool containsDuplicate(vector<int> &nums) {
+sort(nums.begin(), sort.end());
+int n = nums.size();
+for (int i=1; i<=n; i++){
+if(nums[i] = nums[i-1]){
+return true;
+} return flase;
+}
+};
+//working: sorting the array puts each duplicate elements adjacent element and we check with for loop wheather they are present or not.
+
+//Second approach -- Hash-set
+class Solution {
+public :
+bool containDuplicate(vector<int> &nums) {
+unordered_set<int>seen; //set keeps track of visited elements
+for( num : nums ) {
+  if( seen.find(( != seen.end() ){
+  return true;
+} return false; //we could also seen.insert(num) to keep up with the checked elements
+}
+};
+//working: works like undordered_map but here key-value pair are same making each element unique instead of just key.
