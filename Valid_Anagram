@@ -1,0 +1,17 @@
+//Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+//An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+// Approach-- Sorting
+class Solution{
+
+bool valid_anagram(string s1, string s2) {
+
+//sort both the string with help of member functions provided by containers in C++
+sort( s1.begin(), s1.end() );    //.begin returns an iterator pointing to the beginning
+sort( s2.begin(), s2.end() );    //.end returns an iterator pointing to the end
+
+//comparing the two sorted strings
+return s1==s2;
+
+//WORKING-- Both strings are soted with help of member functions of C++ containers and are compared with equal '==' operator
