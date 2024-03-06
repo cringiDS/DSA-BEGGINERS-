@@ -2,7 +2,7 @@
 
 //An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
-// Approach-- Sorting
+// APPROACH 1-- Sorting
 class Solution{
 
 bool valid_anagram(string s1, string s2) {
@@ -15,3 +15,31 @@ sort( s2.begin(), s2.end() );    //.end returns an iterator pointing to the end
 return s1==s2;
 
 //WORKING-- Both strings are soted with help of member functions of C++ containers and are compared with equal '==' operator
+
+
+// APPROACH 2-- Hash Map
+
+class solution {
+public:
+bool isAnagram (string s, string t){
+unordered_map<char, int>count;
+
+//counting the frequency of elements in the string
+for(auto x:s){
+  count[x]++;
+}
+
+//Decrementing the frequency of elements in the string
+for(auto x:t){
+count[x]--;
+}
+
+//Check if characters have any non-zero frequency
+for(auto x: count){
+if(x.second != 0){
+return false;
+}
+}return true;
+}
+}
+};
